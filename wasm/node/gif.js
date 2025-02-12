@@ -1,3 +1,4 @@
+var module = module||{};module.exports=module.exports||{};
 const wasm_name = 'gif';
 const wasm_path = process.env.IMAGESCRIPT_WASM_SIMD ? 'simd' : 'any';
 
@@ -76,3 +77,5 @@ module.exports = {
     return { load, Decoder };
   }
 }
+
+;export default module.exports

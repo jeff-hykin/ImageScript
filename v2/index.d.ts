@@ -1,5 +1,5 @@
-import { Color } from './framebuffer';
-import type framebuffer from './framebuffer';
+import { Color } from "./framebuffer.js";
+import type framebuffer from "./framebuffer.js";
 
 export { Color };
 export function load(buffer: BufferSource): Image | Animation;

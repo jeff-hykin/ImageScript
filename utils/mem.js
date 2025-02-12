@@ -1,3 +1,4 @@
+var module = module||{};module.exports=module.exports||{};
 function view(buffer, shared = false) {
   if (buffer instanceof ArrayBuffer) return new Uint8Array(buffer);
   if (shared && buffer instanceof SharedArrayBuffer) return new Uint8Array(buffer);
@@ -24,3 +25,4 @@ function from_parts(buffers, shared = false) {
 }
 
 module.exports = { view, from_parts };
+;export default module.exports

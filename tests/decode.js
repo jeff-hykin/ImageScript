@@ -1,6 +1,6 @@
-const fs = require('fs').promises;
-const {Image} = require('../ImageScript');
-const ImageTest = require('./image');
+import { promises as fs } from "node:fs"
+import {Image} from "../ImageScript.js"
+import ImageTest from "./image.js"
 
 const panic = message => {
     console.error(message);

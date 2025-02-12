@@ -1,3 +1,4 @@
+var module = module||{};module.exports=module.exports||{};
 const wasm_name = 'tiff';
 const wasm_path = process.env.IMAGESCRIPT_WASM_SIMD ? 'simd' : 'any';
 
@@ -47,3 +48,4 @@ module.exports = {
     return { decode, load: decode };
   }
 }
+;export default module.exports

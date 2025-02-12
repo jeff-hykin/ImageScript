@@ -1,5 +1,5 @@
-const {Image} = require('..');
-const fs = require('fs').promises;
+import {Image} from ".." /* CHECKME: path is folder, but no index.js or index.ts or mod.js or mod.ts */
+import { promises as fs } from "node:fs"
 
 (async () => {
     const [backgroundSVG, avatarBinary, badges, font] = await Promise.all([

@@ -1,5 +1,5 @@
-const fs = require('fs').promises;
-const {Frame, GIF} = require('../ImageScript');
+import { promises as fs } from "node:fs"
+import {Frame, GIF} from "../ImageScript.js"
 
 const panic = message => {
     console.error(message);

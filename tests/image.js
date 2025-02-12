@@ -1,5 +1,6 @@
-const fs = require('fs').promises;
-const {Image} = require('../ImageScript');
+var module = module||{};module.exports=module.exports||{};
+import { promises as fs } from "node:fs"
+import {Image} from "../ImageScript.js"
 
 module.exports = (async () => {
     const image = new Image(128, 128);
@@ -15,3 +16,5 @@ module.exports = (async () => {
 
     return image;
 })();
+
+;export default module.exports

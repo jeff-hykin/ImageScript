@@ -1,3 +1,4 @@
+var module = module||{};module.exports=module.exports||{};
 const wasm_name = 'font';
 const wasm_path = process.env.IMAGESCRIPT_WASM_SIMD ? 'simd' : 'any';
 
@@ -140,3 +141,4 @@ module.exports = {
     return { Font, Layout };
   }
 }
+;export default module.exports

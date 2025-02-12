@@ -1,3 +1,4 @@
+var module = module||{};module.exports=module.exports||{};
 var __defProp = Object.defineProperty;
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __export = (target, all) => {
@@ -2350,3 +2351,5 @@ var framebuffer = class {
 0 && (module.exports = {
   Color
 });
+
+;export default module.exports

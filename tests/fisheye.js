@@ -1,5 +1,5 @@
-const fs = require('fs').promises;
-const {Image} = require('../ImageScript');
+import { promises as fs } from "node:fs"
+import {Image} from "../ImageScript.js"
 
 (async () => {
 	const input = await fs.readFile('./tests/targets/external.png');

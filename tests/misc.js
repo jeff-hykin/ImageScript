@@ -1,4 +1,4 @@
-const {Image, Frame, GIF} = require('../ImageScript');
+import {Image, Frame, GIF} from "../ImageScript.js"
 const panic = msg => {
     console.error(msg);
     process.exit(1);

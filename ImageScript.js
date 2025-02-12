@@ -1,16 +1,17 @@
-const png = require('./png/node.js');
-const mem = require('./utils/mem.js');
-const {version} = require('./package.json');
-const codecs = require('./codecs/node/index.js');
-const { default: v2 } = require('./v2/framebuffer.js');
+var module = module||{};module.exports=module.exports||{};
+import png from "./png/node.js"
+import mem from "./utils/mem.js"
+import {version} from "./package.json" /* CHECKME: path is file, but not js or ts */
+import codecs from "./codecs/node/index.js"
+import { default as  v2 } from "./v2/framebuffer.js"
 
 // old
-const svglib = require('./wasm/node/svg.js');
-const giflib = require('./wasm/node/gif.js');
-const pnglib = require('./wasm/node/png.js');
-const fontlib = require('./wasm/node/font.js');
-const jpeglib = require('./wasm/node/jpeg.js');
-const tifflib = require('./wasm/node/tiff.js');
+import svglib from "./wasm/node/svg.js"
+import giflib from "./wasm/node/gif.js"
+import pnglib from "./wasm/node/png.js"
+import fontlib from "./wasm/node/font.js"
+import jpeglib from "./wasm/node/jpeg.js"
+import tifflib from "./wasm/node/tiff.js"
 
 const MAGIC_NUMBERS = {
     PNG: 0x89504e47,
@@ -1667,3 +1668,5 @@ function decode(data, onlyExtractFirstFrame) {
 }
 
 module.exports = {Image, GIF, Frame, TextLayout, ImageType, decode};
+
+;export default module.exports

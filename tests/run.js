@@ -1,5 +1,5 @@
-const fs = require('fs');
-const child_process = require('child_process');
+import fs from "node:fs"
+import child_process from "node:child_process"
 
 (async () => {
     for (const file of fs.readdirSync('./tests/')) {

@@ -1,3 +1,4 @@
+
 var __defProp = Object.defineProperty;
 var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
 var __export = (target, all) => {
@@ -1135,3 +1136,5 @@ function filter_4(slice, pixels, p_offset, bytespp, row_length) {
     }
   }
 }
+
+;export default exports

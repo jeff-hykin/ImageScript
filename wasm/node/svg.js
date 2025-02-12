@@ -1,3 +1,4 @@
+var module = module||{};module.exports=module.exports||{};
 const wasm_name = 'svg';
 const wasm_path = process.env.IMAGESCRIPT_WASM_SIMD ? 'simd' : 'any';
 
@@ -56,3 +57,4 @@ module.exports = {
     return { load, rasterize };
   }
 }
+;export default module.exports

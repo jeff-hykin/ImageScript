@@ -1,14 +1,15 @@
-const mem = require('../utils/mem.js');
-const png = require('../png/node.js');
-const magic = require('./codecs/magic.js');
-const codecs = require('../codecs/node/index.js');
-const { Color, default: framebuffer } = require('./framebuffer.js');
+var module = module||{};module.exports=module.exports||{};
+import mem from "../utils/mem.js"
+import png from "../png/node.js"
+import magic from "./codecs/magic.js"
+import codecs from "../codecs/node/index.js"
+import { Color, default as  framebuffer } from "./framebuffer.js"
 
 const wasm = {
-  svg: require('../wasm/node/svg.js'),
-  gif: require('../wasm/node/gif.js'),
-  jpeg: require('../wasm/node/jpeg.js'),
-  tiff: require('../wasm/node/tiff.js'),
+  svg: require('../wasm/node/svg.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/svg.js')) */,
+  gif: require('../wasm/node/gif.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/gif.js')) */,
+  jpeg: require('../wasm/node/jpeg.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/jpeg.js')) */,
+  tiff: require('../wasm/node/tiff.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/tiff.js')) */,
   // font: require('../wasm/node/font.js'),
 }
 
@@ -259,3 +260,5 @@ class Animation {
 }
 
 module.exports = { load, Image, Frame, Color, Animation };
+
+;export default module.exports

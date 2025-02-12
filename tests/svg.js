@@ -1,5 +1,5 @@
-const {Image} = require('../ImageScript');
-const fs = require('fs').promises;
+import {Image} from "../ImageScript.js"
+import { promises as fs } from "node:fs"
 
 (async () => {
     const svg = await fs.readFile('./tests/svgs/potato.svg');

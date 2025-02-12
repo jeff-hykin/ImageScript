@@ -1,4 +1,5 @@
-const { view } = require('../../utils/mem.js');
+var module = module||{};module.exports=module.exports||{};
+import { view } from "../../utils/mem.js"
 
 const formats = {
   ttf: { type: 'font', format: 'ttf' },
@@ -23,3 +24,4 @@ function buffer(init) {
 }
 
 module.exports = { buffer };
+;export default module.exports
