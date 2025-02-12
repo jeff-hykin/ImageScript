@@ -1,4 +1,5 @@
-var module = module||{};module.exports=module.exports||{};
+var exports = {};
+var module = module||{};module.exports=exports||{};
 var __defProp = Object.defineProperty;
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __export = (target, all) => {

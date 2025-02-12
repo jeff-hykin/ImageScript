@@ -1,4 +1,4 @@
-
+var exports = {};
 var __defProp = Object.defineProperty;
 var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
 var __export = (target, all) => {

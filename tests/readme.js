@@ -1,4 +1,4 @@
-import {Image} from ".." /* CHECKME: path is folder, but no index.js or index.ts or mod.js or mod.ts */
+import {Image} from "../ImageScript.js" /* CHECKME: path is folder, but no index.js or index.ts or mod.js or mod.ts */
 import { promises as fs } from "node:fs"
 
 (async () => {

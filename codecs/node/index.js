@@ -1,4 +1,5 @@
-throw Error(`Unable to use node native codecs`)
+export default {}
+// throw Error(`Unable to use node native codecs`)
 // var module = module||{};module.exports=module.exports||{};
 // import { arch, platform } from "node:os"
 // try { module.exports = require(`./bin/${arch()}-${platform()}.node`)

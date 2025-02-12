@@ -1,9 +1,9 @@
-var module = module||{};module.exports=module.exports||{};
 import png from "./png/node.js"
 import mem from "./utils/mem.js"
-import {version} from "./package.json" /* CHECKME: path is file, but not js or ts */
 import codecs from "./codecs/node/index.js"
 import { default as  v2 } from "./v2/framebuffer.js"
+import packageJsonString from "./package.json.binaryified.js"
+const { version } = JSON.parse(packageJsonString)
 
 // old
 import svglib from "./wasm/node/svg.js"
@@ -13,7 +13,7 @@ import fontlib from "./wasm/node/font.js"
 import jpeglib from "./wasm/node/jpeg.js"
 import tifflib from "./wasm/node/tiff.js"
 
-const MAGIC_NUMBERS = {
+export const MAGIC_NUMBERS = {
     PNG: 0x89504e47,
     JPEG: 0xffd8ff,
     TIFF: 0x49492a00,
@@ -23,7 +23,7 @@ const MAGIC_NUMBERS = {
 /**
  * Represents an image; provides utility functions
  */
-class Image {
+export class Image {
     /**
      * Creates a new image with the given dimensions
      * @param {number} width
@@ -1177,7 +1177,7 @@ class Image {
         if (mode !== this.SVG_MODE_SCALE && size < 1)
             throw new RangeError('SVG size must be >= 1')
 
-        if (typeof svg === 'string') svg = Buffer.from(svg);
+        if (typeof svg === 'string') svg = globalThis.Buffer.from(svg);
         const framebuffer = (await svglib.init()).rasterize(svg, mode, size);
 
         const image = new Image(framebuffer.width, framebuffer.height);
@@ -1233,7 +1233,7 @@ class Image {
  * Represents a frame in a GIF
  * @extends Image
  */
-class Frame extends Image {
+export class Frame extends Image {
     /**
      * GIF frame disposal mode KEEP. For use with {@link Frame}
      * @returns {string}
@@ -1344,7 +1344,7 @@ class Frame extends Image {
  * Represents a GIF image as an array of frames
  * @extends Array<Frame>
  */
-class GIF extends Array {
+export class GIF extends Array {
     /**
      * Creates a new GIF image.
      * @param {Frame[]} frames The frames to create the GIF from
@@ -1557,7 +1557,7 @@ class GIF extends Array {
     }
 }
 
-class TextLayout {
+export class TextLayout {
     /**
      * Layout options for {@link Image.renderText}
      * @param {object} [options]
@@ -1597,7 +1597,7 @@ class TextLayout {
     }
 }
 
-class ImageType {
+export class ImageType {
     /**
      * Gets an images type (png, jpeg, tiff, gif)
      * @param {Buffer|Uint8Array} data The image binary to get the type of
@@ -1659,7 +1659,7 @@ class ImageType {
  * @param {boolean} [onlyExtractFirstFrame] Whether to end GIF decoding after the first frame
  * @returns {Promise<GIF|Image>} The decoded image
  */
-function decode(data, onlyExtractFirstFrame) {
+export function decode(data, onlyExtractFirstFrame) {
     const type = ImageType.getType(data);
 
     if (type === 'gif')
@@ -1667,6 +1667,4 @@ function decode(data, onlyExtractFirstFrame) {
     return Image.decode(data);
 }
 
-module.exports = {Image, GIF, Frame, TextLayout, ImageType, decode};
-
-;export default module.exports
+export default {Image, GIF, Frame, TextLayout, ImageType, decode}
