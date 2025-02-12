@@ -2193,7 +2193,7 @@ function filter_4(slice, pixels, p_offset, bytespp, row_length) {
 }
 
 // v2/framebuffer.mjs
-var framebuffer = class {
+export var framebuffer = class {
   constructor(width, height, buffer) {
     this.width = width | 0;
     this.height = height | 0;

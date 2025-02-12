@@ -1,7 +1,7 @@
 import png from "./png/node.js"
 import mem from "./utils/mem.js"
 import codecs from "./codecs/node/index.js"
-import { default as  v2 } from "./v2/framebuffer.js"
+import { framebuffer as v2 } from "./v2/framebuffer.js"
 import packageJsonString from "./package.json.binaryified.js"
 const { version } = JSON.parse(packageJsonString)
 
