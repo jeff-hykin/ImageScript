@@ -1,12 +1,12 @@
 const wasm_name = 'png';
-const { join } = require('path');
-const { promises: { readFile } } = require('fs');
 const wasm_path = process.env.IMAGESCRIPT_WASM_SIMD ? 'simd' : 'any';
+
+import uint8ArrayForPngWasm from "../any/png.wasm.binaryified.js"
 
 let mod = null;
 module.exports = {
   async init() {
-    if (!mod) mod = new WebAssembly.Module(await readFile(join(__dirname, `../${wasm_path}/${wasm_name}.wasm`)));
+    if (!mod) mod = new WebAssembly.Module(uint8ArrayForPngWasm);
 
     return this.new();
   },

@@ -1,12 +1,14 @@
 const wasm_name = 'tiff';
-const { join } = require('path');
-const { promises: { readFile } } = require('fs');
 const wasm_path = process.env.IMAGESCRIPT_WASM_SIMD ? 'simd' : 'any';
+
+import uint8ArrayForTiffWasm from "../any/tiff.wasm.binaryified.js"
 
 let mod = null;
 module.exports = {
   async init() {
-    if (!mod) mod = new WebAssembly.Module(await readFile(join(__dirname, `../${wasm_path}/${wasm_name}.wasm`)));
+    if (!mod) mod = new WebAssembly.Module(
+        uint8ArrayForTiffWasm
+    );
 
     return this.new();
   },
