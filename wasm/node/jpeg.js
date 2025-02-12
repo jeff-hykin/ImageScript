@@ -7,8 +7,7 @@ import uint8ArrayForJpegWasm from "../any/jpeg.wasm.binaryified.js"
 let mod = null;
 module.exports = {
   async init() {
-    if (!mod) mod = new WebAssembly.Module(
-        uint8ArrayForJpegWasm);
+    if (!mod) mod = new WebAssembly.Module(uint8ArrayForJpegWasm);
 
     return this.new();
   },

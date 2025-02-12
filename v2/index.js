@@ -5,11 +5,16 @@ import magic from "./codecs/magic.js"
 import codecs from "../codecs/node/index.js"
 import { Color, default as  framebuffer } from "./framebuffer.js"
 
+import wasmSvg from '../wasm/node/svg.js'
+import wasmGif from '../wasm/node/gif.js'
+import wasmJpeg from '../wasm/node/jpeg.js'
+import wasmTiff from '../wasm/node/tiff.js'
+
 const wasm = {
-  svg: require('../wasm/node/svg.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/svg.js')) */,
-  gif: require('../wasm/node/gif.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/gif.js')) */,
-  jpeg: require('../wasm/node/jpeg.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/jpeg.js')) */,
-  tiff: require('../wasm/node/tiff.js')/* FIXME: can't auto handle deep require (await import('../wasm/node/tiff.js')) */,
+  svg: wasmSvg,
+  gif: wasmGif,
+  jpeg: wasmJpeg,
+  tiff: wasmTiff,
   // font: require('../wasm/node/font.js'),
 }
 
